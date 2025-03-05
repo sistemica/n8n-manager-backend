@@ -1,0 +1,19 @@
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+
+api:
+  dashboard: true
+  insecure: true
+
+providers:
+  http:
+    endpoint: "http://config-server:9000/api/config"
+    pollInterval: "5s"
+
+log:
+  level: DEBUG
+
+accessLog: {}

@@ -1,0 +1,26 @@
+services:
+  traefik:
+    image: traefik:v3.3
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - ./traefik.yml:/etc/traefik/traefik.yml
+    networks:
+      - traefik-net
+    depends_on:
+      - config-server
+
+  config-server:
+    build: .
+    networks:
+      - traefik-net
+
+  httpbin:
+    image: kennethreitz/httpbin
+    networks:
+      - traefik-net
+
+networks:
+  traefik-net:
+    driver: bridge

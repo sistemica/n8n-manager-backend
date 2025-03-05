@@ -6,6 +6,7 @@
 # Folders
 _obj
 _test
+pb_data/
 
 # Architecture specific extensions/prefixes
 *.[568vq]
@@ -75,7 +76,7 @@ fabric.properties
 # Icon must end with two \r
 Icon
 
-
+.env
 # Thumbnails
 ._*
 
@@ -94,3 +95,4 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+.aider*
