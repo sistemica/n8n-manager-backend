@@ -1,0 +1,29 @@
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+
+api:
+  dashboard: true
+  insecure: true
+
+providers:
+  http:
+    endpoint: "http://host.docker.internal:9000/api/config"
+    pollInterval: "5s"
+
+# Detailed logging configuration
+log:
+  level: "DEBUG"  # DEBUG, INFO, WARN, ERROR, FATAL, PANIC
+  format: "json"  # json or common
+  filePath: "/dev/stdout"  # Explicitly write to stdout
+
+# Access log configuration
+accessLog:
+  filePath: "/dev/stdout"
+  format: "json"
+  fields:
+    defaultMode: "keep"
+    headers:
+      defaultMode: "keep"

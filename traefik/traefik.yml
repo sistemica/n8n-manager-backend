@@ -11,7 +11,7 @@ api:
 providers:
   http:
     endpoint: "http://config-server:9000/api/config"
-    pollInterval: "5s"
+    pollInterval: "2s"
 
 log:
   level: DEBUG
